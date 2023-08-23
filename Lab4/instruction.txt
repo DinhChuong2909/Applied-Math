@@ -1,0 +1,61 @@
+1a: 
+tạo X_1a -> có được y
+gọi lr.fit()
+fit 11 đặc trưng vào mô hình
+y = w1.x1+ w2.x2 + ... + w11.x11
+x1= gender
+x2 = gpa10 ... x11 = domain
+
+x_train: đọc được từ train.csv
+2 cách truy xuất 11 cột:
++ .loc[["Gender", ..."Domain"]]
++ iloc[:, :11] -> X_1a
+y_train: chung cho tất cả bài
+lr_1 -> get_params -> [w1...w11]
+y_predict_test = lr.predict(X_test_1a)
+
+1b:
+Phải chia tập X_train_1b thành 5 tập (theo yêu cầu đề)
+
+MAE nhỏ nhất -> 
+MAE1com, MAE1arg, MAE1ext, ...
+MAE2com, MAE2arg, MAE2ext, ...
+MAE3com, MAE3arg, MAE3ext, ...
+...  ... ... , ....
+Tính trung bình cộng từng cột
+
+Tạo ra 5 bộ trước -> for từ 1 đến 5, sau đó for từ com đến openess (Làm sai trình tự trừ 50%)
+
+Tạo 5 bộ random không xài được replace = false như project 2
+
+X_1b = X_train.iloc[:, -5:] -> shuffle
+Lấy từng bộ dữ liệu: [0: 490]; [490:490x2]; [490x2; 490x3];[490x3: 490x4];[490x4 : ]
+Nếu làm đúng -> MAE của agree (nhớ báo cáo từng trung bình cộng của 5 cột)
+
+Sau khi tìm được, huấn luyện toàn bộ train set trên đặc trưng tính cách tốt nhất đó
+vd: X_1b.loc[["agreeable"]] -> fit() -> lr1b
+
+1c:
+Tương tự 1b, chỉ khác đoạn lấy 3 cột (dùng .loc)
+
+1d:
+Tạo tối thiểu 3 đặc trưng khác 1a, 1b, 1c
+
+Liệt kê thư viện + giải thích + mô tả 
+
+Báo cáo:
+1. Mục lục
+2. Giới thiệu
+3. Những thư viện đã dùng
+4. Những hàm ...
+5. Kết quả & nhận xét
+6. Giải thuyết
+- Giải thích lý do agr là đặc trưng tốt nhất
+...
+7. Quá trình tìm m mô hình
+8. Ref (Chỗ nào giải thích trên báo cáo thì note số rồi xuống dưới ghi link)
+[1]Web thì để link
+[2]Nghiên cứu khoa học, bài báo
+Ngày truy cập các nghiên cứu khoa học
+[3]Tên tác giả, năm publish
+[4] Tên tác giả, tên sách, ngày publish, năm, version
